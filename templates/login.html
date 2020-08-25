@@ -1,0 +1,96 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <meta name="description" content="Colorlib Templates">
+    <meta name="author" content="Colorlib">
+    <meta name="keywords" content="Colorlib Templates">
+
+    <!-- Title Page-->
+    <title>Py week-Registration</title>
+
+    <!-- Icons font CSS-->
+
+    <link href="{% static 'vendor/font-awesome-4.7/css/font-awesome.min.css' %}" rel="stylesheet" media="all">
+
+    <!-- Font special for pages-->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+
+    <!-- Main CSS-->
+    <link rel="stylesheet" href="{%static 'signup/style.css'%}">
+</head>
+
+<body>
+  <style media="screen">
+    .card{
+      height: 100vh;
+    }
+  </style>
+  <style media="screen">
+    li{
+      color:white;
+    }
+  </style>
+    <div style="background:url('{%static 'images/bgc.jpg'%}');background-size: cover;"class="page-wrapper bg-gra-01 p-t-180 p-b-100 font-poppins">
+        <div class="wrapper wrapper--w780">
+            <div class="card card-3">
+
+
+                <div class="card-body">
+                    <ul id="tabsel">
+                        <a href="{%url 'signup'%}"><li ><h4 class="title" style="background-color:#222;">Register</h4></li></a>
+                      <a href="{%url 'login'%}">  <li style="background-color:#111;padding:0.5rem;" ><h4 class="title">Log In</h4></li></a>
+                    </ul>
+
+                    <form method="POST" id="registration_form">
+                      {%csrf_token%}
+                        <div class="input--style-3"><h6 class="titleback">Welcome back!</h6></div>
+                        <div class="input-group">
+
+                            <input type="text" placeholder="Username" name="username" class="input--style-3"value="" />
+                        </div>
+                        <div class="input-group">
+
+                            <input type="password" placeholder="Password"class="input--style-3" name="password" value="" />
+                        </div>
+
+                        <div class="p-t-10">
+                          {%for message in messages%}
+                        <font color="red">  <b style="padding:1rem;">{{message}}</b></font>
+                          {%endfor%}
+                            <input style="margin-top:1rem;"type="submit" class="btn btn--pill btn--green" name="action" value="Login">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Jquery JS-->
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+
+
+    <!-- Main JS-->
+    <script src="{% static 'signup/global.js'%}"></script>
+
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+<script type="text/javascript">
+
+  ls=["id_username","id_email","id_institution","id_password1","id_password2"]
+  for (let i=0;i<ls.length;i++){
+    document.getElementById(ls[i]).className="input--style-3";
+    document.getElementById(ls[i]).placeholder=ls[i].split('_')[1];
+  }
+
+  document.getElementById("id_mobile_no").className="input--style-3";
+  document.getElementById("id_mobile_no").placeholder="Contact no";
+
+</script>
+</html>
+<!-- end document-->

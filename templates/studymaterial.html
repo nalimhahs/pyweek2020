@@ -1,0 +1,96 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="{%static 'studymaterial/style.css'%}" />
+    <title></title>
+  </head>
+  <body >
+    <b class="title"> UI/UX designing</b>
+    <div class="container">
+      {%for card in ui%}
+      <div class="card">
+        <div class="content">
+        <p> {{card.description}}</p>
+        </div>
+        <img
+          class="image"
+          src="{{card.image}}"
+        />
+          <p>{{card.name}}({{card.rating}}<font color="yellow">⭐</font>)</p>
+          <a href="{{card.link}}"><button type="button" name="button">+Take me to them</button></a>
+      </div>
+      {%endfor%}
+
+    </div>
+    <b class="title"> HTML CSS AND BOOTSTRAP</b>
+    <div class="container">
+      {%for card in html%}
+      <div class="card">        <div class="content">
+              <p> {{card.description}}</p>
+              </div>
+        <img
+          class="image"
+          src="{{card.image}}"
+        />
+          <p>{{card.name}}({{card.rating}}<font color="yellow">⭐</font>)</p>
+          <a href="{{card.link}}"><button type="button" name="button">+Take me to them</button></a>
+      </div>
+      {%endfor%}
+
+    </div>
+    <b class="title"> SQL AND HEROKU</b>
+    <div class="container">
+      {%for card in sql%}
+      <div class="card">        <div class="content">
+              <p>  {{card.description}}</p>
+              </div>
+        <img
+          class="image"
+          src="{{card.image}}"
+        />
+          <p>{{card.name}}({{card.rating}}<font color="yellow">⭐</font>)</p>
+          <a href="{{card.link}}"><button type="button" name="button">+Take me to them</button></a>
+      </div>
+      {%endfor%}
+      </div>
+    <b class="title"> GIT AND GITHUB</b>
+    <div class="container">
+      {%for card in git%}
+      <div class="card">        <div class="content">
+              <p>  {{card.description}}</p>
+              </div>
+        <img
+          class="image"
+          src="{{card.image}}"
+        />
+          <p>{{card.name}}({{card.rating}}<font color="yellow">⭐</font>)</p>
+          <a href="{{card.link}}"><button type="button" name="button">+Take me to them</button></a>
+      </div>
+      {%endfor%}
+    </div>
+    <b class="title"> NUMPY + PANDAS </b>
+    <div class="container">
+      {%for card in panda%}
+      <div class="card">
+        <div class="content">
+        <p>{{card.description}}</p>
+        </div>
+        <img
+          class="image"
+          src="{{card.image}}"
+        />
+          <p>{{card.name}}({{card.rating}}<font color="yellow">⭐</font>)</p>
+          <a href="{{card.link}}"><button type="button" name="button">+Take me to them</button></a>
+
+      </div>
+      {%endfor%}
+
+
+
+    </div>
+
+
+  </body>
+</html>

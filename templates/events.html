@@ -1,0 +1,219 @@
+{%load static%}
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link rel="stylesheet" href="{%static 'events/style.css'%}">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<body>
+
+  <nav class="navbar fixed-top navbar-expand-md custom-navbar navbar-dark">
+                           <img class="navbar-brand" src="{%static 'images/icon.png'%}" id="logo_custom" width="10%" onclick="home()"  alt="logo">
+
+
+
+                                    <ul class="navbar-nav ml-auto ">
+                                      <li class="nav-item">
+                                        <a class="nav-link" href="#workshps"><b class="tag">Workshops</b></a>
+                                      </li>
+                                      <li class="nav-item">
+                                        <a class="nav-link" href="#competitions"><b class="tag" >Competitions</b></a>
+                                      </li>
+                                      <li class="nav-item">
+                                        <a class="nav-link" href="#self"><b class="tag">Self paced learning</b></a>
+                                      </li>
+                                      <li class="tk">
+                                        <b  >{{user.pycoins}} <img class="tkn"src="{%static 'images/token.png'%}" alt=""></b>
+                                      </li>
+                                    </ul>
+
+  </nav>
+
+<a name="workshps"></a>
+<div class="">
+
+  <h1 >WORKSHOPS</h1>
+</div>
+<section class="details-card">
+    <div class="container">
+        <div class="row">
+          {%for ws in workshops%}
+            <div class="col-md-4">
+                <div class="card-content">
+                    <div class="card-img">
+                        <img src="{{ws.image}}" alt="">
+                        <span><h4>{{ws.pycoin_value}} pycoins</h4></span>
+                    </div>
+                    <div class="card-desc">
+                        <h3>{{ws.name}}</h3>
+                        <p>{{ws.description}}</p>
+                            {%if ws.available%}
+                            <a href="#popup1" id="{{ws.name}}${{ws.pycoin_value}} " onclick="pop(this)" class="btn-card" >Pick Your Slot</a>
+                            {%endif%}
+                            {%if not ws.available%}
+                            <a href="#" class="btn-card">Not available</a>
+                            {%endif%}
+                    </div>
+                </div>
+                </div>
+                {%endfor%}
+
+
+</section>
+<a name="competitions"></a>
+<h1 >COMPETITIONS</h1>
+<section class="details-card">
+    <div class="container">
+        <div class="row">
+          {%for ws in competitions%}
+            <div class="col-md-4">
+                <div class="card-content">
+                    <div class="card-img">
+                        <img src="{{ws.image}}" alt="">
+                        <span><h4>{{ws.pycoin_value}} pycoins</h4></span>
+                    </div>
+                    <div class="card-desc">
+                        <h3>{{ws.name}}</h3>
+                        <p>{{ws.description}}</p>
+                        {%if ws.available%}
+                        <a href="#popup1" id="{{ws.name}}${{ws.pycoin_value}} " onclick="pop(this)" class="btn-card" >Pick Your Slot</a>
+                        {%endif%}
+                        {%if not ws.available%}
+                        <a href="#" class="btn-card">Not available</a>
+                        {%endif%}
+                </div>
+            </div>
+            </div>
+            {%endfor%}
+
+
+</section>
+
+
+<a name="self"></a>
+<h1 >SELF PACED LEARNING</h1>
+<section class="details-card">
+    <div class="container">
+        <div class="row">
+          {%for ws in selfs%}
+            <div class="col-md-4">
+                <div class="card-content">
+                    <div class="card-img">
+                        <img src="{{ws.image}}" alt="">
+                        <span><h4>{{ws.pycoin_value}} pycoins</h4></span>
+                    </div>
+                    <div class="card-desc">
+                        <h3>{{ws.name}}</h3>
+                        <p>{{ws.description}}</p>
+                        {%if ws.available%}
+                        <a href="#popup1" id="{{ws.name}}${{ws.pycoin_value}} " onclick="pop(this)" class="btn-card" >Pick Your Slot</a>
+                        {%endif%}
+                        {%if not ws.available%}
+                        <a href="#" class="btn-card">Not available</a>
+                        {%endif%}
+                </div>
+            </div>
+            </div>
+            {%endfor%}
+</section>
+
+
+
+<div id="popup1" class="overlay">
+	<div class="popup">
+		<h2 id="progn">Close the popup to continue registration or goto home</h2>
+		<a class="close" href="">&times;</a>
+		<div class="content" id="progd">
+
+		</div>
+    <button type="button"class="btn btn-success" onclick="confirm()" id="tkns" name="button">Back to home</button>
+
+  </div>
+</div>
+
+
+
+
+<footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-6 col-md-6">
+            <div class="footer-info">
+              <h3>PyWeek2020</h3>
+              <p>
+                <strong>Phone:</strong> +91 7838871155<br>
+                <strong>Email:</strong> pyweek.ieicstkm@gmail.com<br>
+                <strong>Website:</strong>http://ieitkmce.in/<br>
+              </p>
+              <div class="social-links mt-3">
+                <a style="background:url('https://image.flaticon.com/icons/png/128/174/174855.png');background-size:contain;height:50px;width:50px" href="https://instagram.com/iei_tkm_cse?igshid=ld0xjtlh89j2" class="instagram"><i class="bx bxl-instagram"></i></a>
+                <a style="background:url('https://image.flaticon.com/icons/svg/174/174857.svg');background-size:contain;height:50px;width:50px" href="https://www.linkedin.com/company/iei-cse-tkmce" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6 col-md-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Login</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Sign up</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Events</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="https://niranjanprof.github.io/PyWeek2020/PyWeek/">@codingCrew</a></li>
+            </ul>
+          </div>
+
+         <!-- <div class="col-lg-4 col-md-6 footer-newsletter">
+            <h4>Our Newsletter</h4>
+            <p>Subscribe to stay posted with the latest health and fitness updates</p>
+            <form action="" method="post">
+              <input type="email" name="email"><input type="submit" value="Subscribe">
+            </form>
+          </div> -->
+
+        </div>
+      </div>
+    </div>
+
+
+  </footer><!-- End Footer -->
+<script type="text/javascript">
+  function home(){
+    location.pathname = '/';
+  }
+  function pop(e){
+    document.getElementById('progd').innerHTML="Confirm your registration by clicking the button below. After confirmation you will receive an email containing links to our event gps. We are waiting for you! : )";
+    ls=(e.id).split('$');
+    document.getElementById('progn').innerHTML=ls[0];
+    document.getElementById('tkns').innerHTML=ls[1]+" PyTokens";
+  }
+
+  function confirm(){
+  let text=document.getElementById('progn').innerHTML;
+  let tokens=Number(document.getElementById('tkns').innerHTML.split(' ')[0]);
+  document.getElementById('progn').innerHTML="<font color='green'>Please wait....</font>";
+  $.ajax({
+    type:'GET',
+    url:"{%url 'confirm'%}",
+    data:{'name':text,'pytokens':tokens},
+    success:function(response){
+
+      if(response['success']=='Error'){
+        location.pathname="/";
+      }
+      else{
+
+        document.getElementById('progn').innerHTML="<font color='Blue'>"+response['success']+"</font>";
+
+      }
+    }
+  })}
+
+</script>
+
+
+
+
+
+
+</body>

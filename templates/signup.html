@@ -1,0 +1,125 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <meta name="description" content="Colorlib Templates">
+    <meta name="author" content="Colorlib">
+    <meta name="keywords" content="Colorlib Templates">
+
+    <!-- Title Page-->
+    <title>Py week-Registration</title>
+
+    <!-- Icons font CSS-->
+
+    <link href="{% static 'vendor/font-awesome-4.7/css/font-awesome.min.css' %}" rel="stylesheet" media="all">
+
+    <!-- Font special for pages-->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+
+    <!-- Main CSS-->
+    <link rel="stylesheet" href="{%static 'signup/style.css'%}">
+</head>
+
+<body>
+  <style media="screen">
+
+  </style>
+    <div style="background:url('{%static 'images/bgc.jpg'%}');background-size: cover;"class="page-wrapper bg-gra-01 p-t-180 p-b-100 font-poppins">
+        <div class="wrapper wrapper--w780">
+            <div class="card card-3">
+                <div class="card-heading" >
+                  <img class="tkni"src="{%static 'images/token.png'%}" alt="">
+                  <p class="tetx"> The main highlight of this program is that it uses PyTokens for registration. PyTokens are virtual coins used in our platform. Once a person registers for the program, he or she gains <b>500 PyTokens</b> which can further be used for enrolling in various events. In addition to it, this program inculcates a spirit of self-learning as the coordinators provide basic study materials to all for the competitions</p>
+                </div>
+
+                <div class="card-body">
+                    <ul id="tabsel">
+                        <a href="{%url 'signup'%}"><li ><h4 style="background-color:#111;padding:1rem;"class="title">Register</h4></li></a>
+                      <a href="{%url 'login'%}">  <li ><h4 class="title">Log In</h4></li></a>
+                    </ul>
+
+                    <form method="POST" id="registration_form">
+                      {%csrf_token%}
+                        <div class="input-group">
+
+                            {{form.username}}
+                        </div>
+                        <div class="input-group">
+                          <div class="input-group">
+
+                              {{form.fullname}}
+                          </div>
+                          <font color="grey" size=2px; style="margin-bottom:15px;">    <i >will be considered for your certificate</i></font>
+                          <div class="input-group">
+
+                            {{form.institution}}
+                        </div>
+                        <div class="input-group">
+
+                            {{form.mobile_no}}
+                        </div>
+                        <div class="input-group">
+
+                            {{form.email}}
+                        </div>
+                        <font color="grey" size=2px; style="margin-bottom:15px;">    <i >We wont spam you</i></font>
+                        <div class="input-group">
+
+                            {{form.password1}}
+
+                        </div>
+                    <font color="grey" size=2px; style="margin-bottom:15px;">    <i >Use 8 or more characters with a mix of letters, numbers & symbols</i></font>
+                        <div class="input-group">
+
+                            {{form.password2}}
+                        </div>
+
+                              <b ><font color="red">
+                                {%for field,error in errors.items%}
+                                  {{error}}
+                                {%endfor%}
+                              </font></b>
+                        <div class="p-t-10">
+                            <input type="submit" class="btn btn--pill btn--green" name="action" value="Register">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Jquery JS-->
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+
+
+    <!-- Main JS-->
+    <script src="{% static 'signup/global.js'%}"></script>
+
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+<script type="text/javascript">
+  document.getElementById("id_fullname").value=""
+  ls=["id_username","id_email","id_institution","id_password1","id_password2","id_fullname"]
+  for (let i=0;i<ls.length;i++){
+    document.getElementById(ls[i]).className="input--style-3";
+
+  }
+
+  document.getElementById("id_mobile_no").className="input--style-3";
+  document.getElementById("id_mobile_no").placeholder="Contact no";
+  document.getElementById("id_password1").placeholder="Password";
+  document.getElementById("id_password2").placeholder="Confirm Password";
+  document.getElementById("id_username").placeholder="Username";
+  document.getElementById("id_institution").placeholder="Institution";
+  document.getElementById("id_email").placeholder="Email id";
+
+  document.getElementById("id_fullname").placeholder="Full name";
+
+</script>
+</html>
+<!-- end document-->
