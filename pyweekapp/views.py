@@ -74,7 +74,7 @@ def AdminData(request,val):
     data={}
     i=0
     for item in ls:
-        data[i]={'name':item.user.fullname,'event':item.event.name,'email':item.user.email,'institution':item.user.institution,}
+        data[i]={'name':item.user.fullname,'event':item.event.name,'email':item.user.email,'institution':item.user.institution,'mobile':item.user.mobile_no}
         i+=1
     return JsonResponse({'pyweek':data})
 @login_required(login_url='login')
