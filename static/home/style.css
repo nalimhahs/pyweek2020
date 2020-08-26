@@ -187,8 +187,9 @@ body{
 }
 @media only screen and (max-width: 680px) {
   body{
+    background: #3644bc;
     background-size:cover;
-    background-position:bottom;
+    background-position:top;
 
   }
 
@@ -205,10 +206,11 @@ body{
 
   }
   .txt{
-    padding-top: 20px;
+    padding-top: 30px;
     padding-left: 0;
     margin-left: 0;
     padding-left: 0;
+
     font-size: 4.5rem;
 
   }
@@ -669,3 +671,4 @@ a {
 .lnks{
   font-size: 1rem;
 }
+
