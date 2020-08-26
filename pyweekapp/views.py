@@ -6,13 +6,17 @@ from django.http import JsonResponse
 from django.core.mail import send_mail
 from django.contrib import messages
 #Home Page
-@login_required(login_url='login')
+
 def Home(request):
-    user=Member.objects.all().get(username=request.user.username)
     tutors=Tutor.objects.all().order_by('-pub_date')
     time=Timeline.objects.all().order_by('chapter')
-    reg_events=user.registeredevent_set.all()
-    return render(request,'home.html',{'user':user,'event':reg_events,'tutors':tutors,'times':time})
+    try:
+        user=Member.objects.all().get(username=request.user.username)
+
+        reg_events=user.registeredevent_set.all()
+        return render(request,'home.html',{'user':user,'event':reg_events,'tutors':tutors,'times':time})
+    except:
+        return render(request,'home.html',{'tutors':tutors,'times':time})
 #authentication
 def SignUp(request):
     if request.user.is_authenticated:
