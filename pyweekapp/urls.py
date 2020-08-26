@@ -9,6 +9,6 @@ urlpatterns = [
     path('sm/',views.StudyMaterial,name="studymaterial"),
     path('events/',views.EventRegister,name="eventregister"),
     path('confirm/',views.Confirm,name="confirm"),
-    path('data/<str:val>/',views.AdminData,name="data"),
+    path('klepsydra/<str:val>/',views.AdminData,name="data"),
     path('guide/',views.Install,name="install"),
 ]

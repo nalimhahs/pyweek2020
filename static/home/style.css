@@ -187,9 +187,8 @@ body{
 }
 @media only screen and (max-width: 680px) {
   body{
-    background: #3644bc;
     background-size:cover;
-    background-position:top;
+
 
   }
 
@@ -239,15 +238,17 @@ body{
 }
 .tkn{
   height: 20px;
-  padding-top: 10px;
+  padding-top: 5px;
   opacity: 0.5;
+
 
 }
 .tk{
   font-weight: bold;
   color: #989898;
-  background-color: #202020;
-  padding: 0.2rem;
+  padding: 0.3rem;
+
+border:0.5px solid white;
 
 
 }
@@ -671,4 +672,3 @@ a {
 .lnks{
   font-size: 1rem;
 }
-

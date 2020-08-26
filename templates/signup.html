@@ -6,7 +6,9 @@
     <!-- Required meta tags-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+    <link rel="icon"
+      type="image/png"
+      href="{%static 'images/icon.png'%}">
     <meta name="description" content="Colorlib Templates">
     <meta name="author" content="Colorlib">
     <meta name="keywords" content="Colorlib Templates">
@@ -51,11 +53,15 @@
                             {{form.username}}
                         </div>
                         <div class="input-group">
-                          <div class="input-group">
+
+                          <div style="margin:0px;padding:0px;margin-bottom:10px;" class="input-group">
 
                               {{form.fullname}}
-                          </div>
+
+                          </div >
                           <font color="grey" size=2px; style="margin-bottom:15px;">    <i >will be considered for your certificate</i></font>
+
+
                           <div class="input-group">
 
                             {{form.institution}}
@@ -64,12 +70,12 @@
 
                             {{form.mobile_no}}
                         </div>
-                        <div class="input-group">
+                        <div style="margin:0px;padding:0px;margin-bottom:5px;" class="input-group">
 
                             {{form.email}}
                         </div>
                         <font color="grey" size=2px; style="margin-bottom:15px;">    <i >We wont spam you</i></font>
-                        <div class="input-group">
+                        <div style="margin:0px;padding:0px;margin-bottom:5px;" class="input-group">
 
                             {{form.password1}}
 
