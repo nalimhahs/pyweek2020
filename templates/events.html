@@ -49,20 +49,20 @@
                     <div class="card-desc">
                         <h3>{{ws.name}}</h3>
                         <p>{{ws.description}}</p>
-                            
+
                             {%if ws in regs%}
-                                
+
                             <a href="#popup1" id="{{ws.name}}${{ws.pycoin_value}} " onclick="pop(this)" class="btn-card" >Already Registered</a>
                             {%else%}
                             {%if not ws.available%}
                             <a href="#" class="btn-card">Not available</a>
                             {%else%}
                             <a href="#popup1" id="{{ws.name}}${{ws.pycoin_value}} " onclick="pop(this)" class="btn-card" >Pick your slot</a>
-                            
+
                             {%endif%}
                             {%endif%}
-                            
-                            
+
+
 
                     </div>
                 </div>
@@ -88,14 +88,14 @@
                         <p>{{ws.description}}</p>
 
                             {%if ws in regs%}
-                                
+
                             <a href="#popup1" id="{{ws.name}}${{ws.pycoin_value}} " onclick="pop(this)" class="btn-card" >Already Registered</a>
                             {%else%}
                             {%if not ws.available%}
                             <a href="#" class="btn-card">Not available</a>
                             {%else%}
                             <a href="#popup1" id="{{ws.name}}${{ws.pycoin_value}} " onclick="pop(this)" class="btn-card" >Pick your slot</a>
-                            
+
                             {%endif%}
                             {%endif%}
                 </div>
@@ -125,14 +125,14 @@
 
 
                             {%if ws in regs%}
-                                
+
                             <a href="#popup1" id="{{ws.name}}${{ws.pycoin_value}} " onclick="pop(this)" class="btn-card" >Already Registered</a>
                             {%else%}
                             {%if not ws.available%}
                             <a href="#" class="btn-card">Not available</a>
                             {%else%}
                             <a href="#popup1" id="{{ws.name}}${{ws.pycoin_value}} " onclick="pop(this)" class="btn-card" >Pick your slot</a>
-                            
+
                             {%endif%}
                             {%endif%}
                 </div>
