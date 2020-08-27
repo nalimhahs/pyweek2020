@@ -49,12 +49,21 @@
                     <div class="card-desc">
                         <h3>{{ws.name}}</h3>
                         <p>{{ws.description}}</p>
-                            {%if ws.available%}
-                            <a href="#popup1" id="{{ws.name}}${{ws.pycoin_value}} " onclick="pop(this)" class="btn-card" >Pick Your Slot</a>
-                            {%endif%}
+                            
+                            {%if ws in regs%}
+                                
+                            <a href="#popup1" id="{{ws.name}}${{ws.pycoin_value}} " onclick="pop(this)" class="btn-card" >Already Registered</a>
+                            {%else%}
                             {%if not ws.available%}
                             <a href="#" class="btn-card">Not available</a>
+                            {%else%}
+                            <a href="#popup1" id="{{ws.name}}${{ws.pycoin_value}} " onclick="pop(this)" class="btn-card" >Pick your slot</a>
+                            
                             {%endif%}
+                            {%endif%}
+                            
+                            
+
                     </div>
                 </div>
                 </div>
@@ -77,12 +86,18 @@
                     <div class="card-desc">
                         <h3>{{ws.name}}</h3>
                         <p>{{ws.description}}</p>
-                        {%if ws.available%}
-                        <a href="#popup1" id="{{ws.name}}${{ws.pycoin_value}} " onclick="pop(this)" class="btn-card" >Pick Your Slot</a>
-                        {%endif%}
-                        {%if not ws.available%}
-                        <a href="#" class="btn-card">Not available</a>
-                        {%endif%}
+
+                            {%if ws in regs%}
+                                
+                            <a href="#popup1" id="{{ws.name}}${{ws.pycoin_value}} " onclick="pop(this)" class="btn-card" >Already Registered</a>
+                            {%else%}
+                            {%if not ws.available%}
+                            <a href="#" class="btn-card">Not available</a>
+                            {%else%}
+                            <a href="#popup1" id="{{ws.name}}${{ws.pycoin_value}} " onclick="pop(this)" class="btn-card" >Pick your slot</a>
+                            
+                            {%endif%}
+                            {%endif%}
                 </div>
             </div>
             </div>
@@ -107,12 +122,19 @@
                     <div class="card-desc">
                         <h3>{{ws.name}}</h3>
                         <p>{{ws.description}}</p>
-                        {%if ws.available%}
-                        <a href="#popup1" id="{{ws.name}}${{ws.pycoin_value}} " onclick="pop(this)" class="btn-card" >Pick Your Slot</a>
-                        {%endif%}
-                        {%if not ws.available%}
-                        <a href="#" class="btn-card">Not available</a>
-                        {%endif%}
+
+
+                            {%if ws in regs%}
+                                
+                            <a href="#popup1" id="{{ws.name}}${{ws.pycoin_value}} " onclick="pop(this)" class="btn-card" >Already Registered</a>
+                            {%else%}
+                            {%if not ws.available%}
+                            <a href="#" class="btn-card">Not available</a>
+                            {%else%}
+                            <a href="#popup1" id="{{ws.name}}${{ws.pycoin_value}} " onclick="pop(this)" class="btn-card" >Pick your slot</a>
+                            
+                            {%endif%}
+                            {%endif%}
                 </div>
             </div>
             </div>
@@ -185,7 +207,7 @@
     location.pathname = '/';
   }
   function pop(e){
-    document.getElementById('progd').innerHTML="Confirm your registration by clicking the button below. After confirmation you will receive an email containing links to our event gps. We are waiting for you! : )";
+    document.getElementById('progd').innerHTML="Confirm your registration by clicking the button below.<b>Check your mail box after confirmation</b>. We are awaiting you in the respective groups<br> <i><a href='https://chat.whatsapp.com/IQFUrwfqqsz7HsyYXrNCSW'>Join our community group</a> (after registration)</i>";
     ls=(e.id).split('$');
     document.getElementById('progn').innerHTML=ls[0];
     document.getElementById('tkns').innerHTML=ls[1]+" PyTokens";
