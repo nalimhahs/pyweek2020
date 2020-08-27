@@ -29,7 +29,12 @@ def Home(request):
         return render(
             request,
             "home.html",
-            {"user": user, "event": reg_events, "tutors": tutors, "times": time},
+            {
+                "user": user,
+                "event": reg_events,
+                "tutors": tutors,
+                "times": time
+            },
         )
     except:
         return render(request, "home.html", {"tutors": tutors, "times": time})
@@ -55,9 +60,15 @@ def SignUp(request):
         else:
             errors = form.errors
             form = CreateForm()
-            return render(request, "signup.html", {"form": form, "errors": errors})
+            return render(request, "signup.html", {
+                "form": form,
+                "errors": errors
+            })
     form = CreateForm()
-    return render(request, "signup.html", {"form": form, "errors": form.errors})
+    return render(request, "signup.html", {
+        "form": form,
+        "errors": form.errors
+    })
 
 
 def Login(request):
@@ -88,7 +99,13 @@ def StudyMaterial(request):
     return render(
         request,
         "studymaterial.html",
-        {"html": html, "git": git, "panda": panda, "ui": ui, "sql": sql},
+        {
+            "html": html,
+            "git": git,
+            "panda": panda,
+            "ui": ui,
+            "sql": sql
+        },
     )
 
 
