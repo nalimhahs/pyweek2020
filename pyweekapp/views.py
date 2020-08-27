@@ -1,18 +1,12 @@
-from django.shortcuts import render, redirect
+from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
-from .models import (
-    CreateForm,
-    Member,
-    Studymaterial,
-    Event,
-    Registeredevent,
-    Tutor,
-    Timeline,
-)
-from django.http import JsonResponse
 from django.core.mail import send_mail
-from django.contrib import messages
+from django.http import JsonResponse
+from django.shortcuts import redirect, render
+
+from .models import (CreateForm, Event, Member, Registeredevent, Studymaterial,
+                     Timeline, Tutor)
 
 # Home Page
 
