@@ -68,7 +68,15 @@ def Logout(request):
     return redirect('login')
 #data admin
 def AdminData(request,val):
-    print(val)
+    if(val=="all"):
+        members=Member.objects.all()
+        i=0
+        data={}
+        i=0
+        for user in members:
+           data[i]={'name':user.fullname,'email':user.email,'institution':user.institution,'mobile':user.mobile_no} 
+           i+=1
+        return JsonResponse({'users':data})
     event=Event.objects.all().get(name=val)
     ls=Registeredevent.objects.all().filter(event=event)
     data={}
