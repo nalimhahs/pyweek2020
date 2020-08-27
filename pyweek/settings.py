@@ -15,7 +15,7 @@ import os
 import socket
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
-TEMPLATE_DIR=os.path.join(BASE_DIR,'templates')
+TEMPLATE_DIR = os.path.join(BASE_DIR, 'templates')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
@@ -24,7 +24,7 @@ TEMPLATE_DIR=os.path.join(BASE_DIR,'templates')
 SECRET_KEY = 'e8bukg*@b3e1ejzv+)fa61a%qvi3ij_+x$860ns)9gagd=*pf7'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG =  False
+DEBUG = False
 ALLOWED_HOSTS = []
 
 
@@ -119,11 +119,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS=(os.path.join(BASE_DIR,'static'),)
-EMAIL_BACKEND='django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST_USER= 'services.pyweek@gmail.com'
+STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST_USER = 'services.pyweek@gmail.com'
 EMAIL_HOST = socket.gethostbyname('smtp.gmail.com')
-EMAIL_PORT=587
+EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_PASSWORD= 'Ajith@2001'
+EMAIL_HOST_PASSWORD = 'Ajith@2001'
 django_heroku.settings(locals())
